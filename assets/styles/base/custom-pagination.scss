@@ -1,0 +1,34 @@
+.custom-pagination {
+    @include df_ac;
+    gap: .5rem;
+    .swiper-pagination-bullet {
+        border-radius: 0;
+        margin: 0!important;
+        flex: 1;
+        height: .5rem;
+    }
+    &.primary {
+        .swiper-pagination-bullet {
+            background-color: $bg-tertiary;
+            &.swiper-pagination-bullet-active {
+                background-color: $bg-inv-secondary;
+            }
+        }
+    }
+    &.brand {
+        .swiper-pagination-bullet {
+            background-color: #FDA993;
+            &.swiper-pagination-bullet-active {
+                background-color: $bg-inv-primary;
+            }
+        }
+    }
+    &.primary {
+        .swiper-pagination-bullet {
+            background-color: $bg-inv-tertiary;
+            &.swiper-pagination-bullet-active {
+                background-color: $bg-inv-primary;
+            }
+        }
+    }
+}

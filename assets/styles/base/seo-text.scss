@@ -1,0 +1,57 @@
+article {
+    @include df_fdc;
+    h1, h2, h3, h4, h5, h6 {
+        margin: 1rem 0;
+    }
+    h1 {
+        @include heading_1;
+    }
+    h2 {
+        margin: 1.5rem 0;
+        @include heading_2;
+    }
+    h3 {
+        @include heading_3;
+    }
+    h4 {
+        @include heading_4;
+    }
+    p {
+        @include text_1;
+        margin: 1rem 0;
+    }
+    ul, ol {
+        margin: 1rem 0;
+        padding-left: 3rem;
+        @include text_1;
+    }
+    ul {
+        > li {
+            list-style: disc;
+            @include text_1;
+        }
+    }
+    img, svg, video {
+        width: 50%;
+        height: auto;
+    }
+    a {
+        color: $text-brand-secondary;
+    }
+
+    table {
+        border: 1px solid #e0e0e0;
+        border-collapse: collapse;
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 1rem;
+        }
+    }
+    // blockquote {
+    //     margin: 0;
+    //     padding: 3rem;
+    //     background: $bg-inverse-transparent-5;
+    //     @include seo_italic;
+    //     color: $text-primary;
+    // }
+}

@@ -1,0 +1,6 @@
+.container{
+  margin: 0 8.75rem;
+  @include mobile {
+    margin: 0 1.67rem;
+  }
+}

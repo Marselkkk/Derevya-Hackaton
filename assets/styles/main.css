@@ -1,0 +1,1418 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; }
+
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 16px; }
+  @media (max-width: 1920px) {
+    html {
+      font-size: .8333vw; } }
+  @media (max-width: 768px) {
+    html {
+      font-size: 12px; } }
+
+body {
+  height: 1000dvh;
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  color: #2B2B2B;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ffffff; }
+  body::-webkit-scrollbar {
+    width: .5rem; }
+  body::-webkit-scrollbar-track {
+    background-color: unset; }
+  body::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background-color: #F7F7F7; }
+    body::-webkit-scrollbar-thumb:hover {
+      background-color: #F7F7F7; }
+    body::-webkit-scrollbar-thumb:active {
+      background-color: #EBEBEB; }
+
+main {
+  max-width: 1921px;
+  margin: 0 auto; }
+  @media (max-width: 1920px) {
+    main {
+      margin: 0;
+      max-width: none; } }
+
+hr {
+  margin: 0; }
+
+h1, h2, h3, h4 {
+  margin: 0; }
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+  height: 100%; }
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #2B2B2B; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+p {
+  margin: 0; }
+
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: #2B2B2B; }
+
+.button {
+  font-family: "Montserrat", sans-serif;
+  border: none;
+  background: none;
+  padding: 0;
+  color: #2B2B2B;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  text-wrap: nowrap;
+  cursor: pointer;
+  transition: color 0.15s ease-out, border-color 0.15s ease-out, background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Condensed-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Condensed-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Condensed-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Condensed-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Condensed-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Condensed-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Condensed-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiCondensed-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiCondensed-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiCondensed-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiCondensed-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiCondensed-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiCondensed-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiCondensed-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiExpanded-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiExpanded-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiExpanded-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiExpanded-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiExpanded-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiExpanded-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_SemiExpanded-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Expanded-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Expanded-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Expanded-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Expanded-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Expanded-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Expanded-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_Expanded-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_ExtraExpanded-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_ExtraExpanded-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_ExtraExpanded-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_ExtraExpanded-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_ExtraExpanded-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_ExtraExpanded-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_ExtraExpanded-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Condensed-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Condensed-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Condensed-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Condensed-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Condensed-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Condensed-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Condensed-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiCondensed-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiCondensed-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiCondensed-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiCondensed-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiCondensed-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiCondensed-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiCondensed-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiExpanded-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiExpanded-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiExpanded-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiExpanded-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiExpanded-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiExpanded-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_SemiExpanded-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Expanded-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Expanded-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Expanded-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Expanded-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Expanded-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Expanded-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_Expanded-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_ExtraExpanded-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_ExtraExpanded-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_ExtraExpanded-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_ExtraExpanded-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_ExtraExpanded-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_ExtraExpanded-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_18pt_ExtraExpanded-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Condensed-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Condensed-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Condensed-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Condensed-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Condensed-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Condensed-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Condensed-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiCondensed-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiCondensed-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiCondensed-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiCondensed-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiCondensed-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiCondensed-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiCondensed-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiExpanded-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiExpanded-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiExpanded-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiExpanded-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiExpanded-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiExpanded-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_SemiExpanded-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Expanded-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Expanded-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Expanded-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Expanded-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Expanded-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Expanded-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_Expanded-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_ExtraExpanded-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_ExtraExpanded-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_ExtraExpanded-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_ExtraExpanded-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_ExtraExpanded-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_ExtraExpanded-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_24pt_ExtraExpanded-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Condensed-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Condensed-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Condensed-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Condensed-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Condensed-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Condensed-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Condensed-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiCondensed-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiCondensed-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiCondensed-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiCondensed-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiCondensed-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiCondensed-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: condensed;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiCondensed-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: normal;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiExpanded-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiExpanded-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiExpanded-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiExpanded-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiExpanded-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiExpanded-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: semi-expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_SemiExpanded-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Expanded-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Expanded-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Expanded-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Expanded-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Expanded-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Expanded-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_Expanded-Black.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_ExtraExpanded-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_ExtraExpanded-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_ExtraExpanded-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_ExtraExpanded-SemiBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_ExtraExpanded-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_ExtraExpanded-ExtraBold.ttf") format("truetype"); }
+@font-face {
+  font-family: "TikTok Sans";
+  font-style: normal;
+  font-weight: 900;
+  font-stretch: expanded;
+  font-display: swap;
+  src: url("../../assets/fonts/TikTokSans_28pt_ExtraExpanded-Black.ttf") format("truetype"); }
+.container {
+  margin: 0 8.75rem; }
+  @media (max-width: 768px) {
+    .container {
+      margin: 0 1.67rem; } }
+
+article {
+  display: flex;
+  flex-direction: column; }
+  article h1, article h2, article h3, article h4, article h5, article h6 {
+    margin: 1rem 0; }
+  article h1 {
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    font-stretch: expanded; }
+    @media (max-width: 768px) {
+      article h1 {
+        font-size: 3.33rem; } }
+  article h2 {
+    margin: 1.5rem 0;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 115%;
+    letter-spacing: -0.02em;
+    font-stretch: expanded; }
+    @media (max-width: 768px) {
+      article h2 {
+        font-size: 2.67rem; } }
+  article h3 {
+    font-size: 2.75rem;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: -0.02em; }
+    @media (max-width: 768px) {
+      article h3 {
+        font-size: 2rem; } }
+  article h4 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.02em; }
+    @media (max-width: 768px) {
+      article h4 {
+        font-size: 1.67rem; } }
+  article p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 145%;
+    letter-spacing: 0;
+    margin: 1rem 0; }
+  article ul, article ol {
+    margin: 1rem 0;
+    padding-left: 3rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 145%;
+    letter-spacing: 0; }
+  article ul > li {
+    list-style: disc;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 145%;
+    letter-spacing: 0; }
+  article img, article svg, article video {
+    width: 50%;
+    height: auto; }
+  article a {
+    color: #2194F3; }
+  article table {
+    border: 1px solid #e0e0e0;
+    border-collapse: collapse; }
+    article table th, article table td {
+      border: 1px solid #e0e0e0;
+      padding: 1rem; }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: .25rem; }
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: unset; }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background-color: #EBEBEB;
+  border-radius: 100rem; }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #EBEBEB; }
+  .custom-scrollbar::-webkit-scrollbar-thumb:active {
+    background-color: #FF8F07; }
+
+.custom-pagination {
+  display: flex;
+  align-items: center;
+  gap: .5rem; }
+  .custom-pagination .swiper-pagination-bullet {
+    border-radius: 0;
+    margin: 0 !important;
+    flex: 1;
+    height: .5rem; }
+  .custom-pagination.primary .swiper-pagination-bullet {
+    background-color: #D6D6D6; }
+    .custom-pagination.primary .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background-color: #4D4D4D; }
+  .custom-pagination.brand .swiper-pagination-bullet {
+    background-color: #FDA993; }
+    .custom-pagination.brand .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background-color: #2B2B2B; }
+  .custom-pagination.primary .swiper-pagination-bullet {
+    background-color: #6D6D6D; }
+    .custom-pagination.primary .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background-color: #2B2B2B; }
+
+.accordion-item {
+  cursor: pointer; }
+  .accordion-item__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out; }
+
+.dropdown-item {
+  position: relative;
+  transition: all 0.3s ease-out; }
+  .dropdown-item a {
+    display: flex;
+    align-items: center; }
+    .dropdown-item a svg {
+      transition: all .3s ease-out; }
+  .dropdown-item__content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: all 0.3s ease-out; }
+  .dropdown-item:hover a svg {
+    transform: rotate(180deg);
+    transition: all .3s ease-out; }
+  .dropdown-item:hover .dropdown-item__content {
+    display: flex;
+    flex-direction: column; }
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0; }
+
+/*# sourceMappingURL=main.css.map */
