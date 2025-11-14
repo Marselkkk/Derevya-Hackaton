@@ -97,6 +97,10 @@
         overflow: hidden;
         display: flex;
         justify-content: flex-end;
+        @include mobile {
+            height: 52rem;
+            align-items: flex-end;
+        }
         &__info-block {
             max-width: 45%;
             width: 100%;
@@ -104,27 +108,48 @@
             background-color: #fff;
             @include df_fdc;
             gap: 4rem;
+            @include mobile {
+                max-width: none;
+                max-height: 60%;
+                height: 100%;
+                gap: 0.67rem;
+                padding: 1.33rem 1rem 3.33rem;
+            }
             &__title {
                 font-size: 2rem;
                 font-weight: 550;
                 line-height: 110%;
                 color: #35530E;
+                @include mobile {
+                    font-size: 1.33rem;
+                }
             }
             &__description {
                 font-size: 1.5rem;
                 font-weight: 400;
                 line-height: 110%;
                 color: #3F3F47;
+                @include mobile {
+                    font-size: 1rem;
+                }
             }
             &__info {
                 @include grid(2, 1.75rem);
                 column-gap: .375rem;
+                @include mobile {
+                    padding-top: .67rem;
+                    @include df_fdc;
+                    gap: 1.33rem;
+                }
                 .history-item {
-                    @include df_ac;
+                    display: flex;
                     gap: 1rem;
                     &__icon {
                         height: 2.25rem;
                         aspect-ratio: 1 / 1;
+                        @include mobile {
+                            height: 2.67rem;
+                        }
                         svg {
                             @include wh-100;
                         }
@@ -137,12 +162,18 @@
                             font-weight: 400;
                             line-height: 110%;
                             color: #525252;
+                            @include mobile {
+                                font-size: 1rem;
+                            }
                         }
                         &__value {
                             font-size: 1.5rem;
                             font-weight: 400;
                             line-height: 110%;
                             color: #000;
+                            @include mobile {
+                                font-size: 1rem;
+                            }
                         }
                     }
                 }

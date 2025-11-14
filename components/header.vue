@@ -1,7 +1,15 @@
 <script lang="ts" setup>
+    const { currentlyMobile } = mobileState();
+
     const header = ref<HTMLElement>()
     let lastScrollY = ref(0)
     let isScrolling = ref(false)
+
+    const burgerOpen = ref(false);
+
+    const toggleMenu = () => {
+        burgerOpen.value = !burgerOpen.value;
+    }
 
     const handleScroll = () => {
         if (!header.value) return
@@ -39,7 +47,8 @@
 
     onUnmounted(() => {
         window.removeEventListener('scroll', throttleScroll)
-    })
+    });
+
 </script>
 
 <template>
@@ -56,7 +65,7 @@
                         Derev'Ya
                     </span>
                 </div>
-                <nav class="header-section__nav-block">
+                <nav class="header-section__nav-block" v-if="!currentlyMobile">
                     <ul>
                         <li>
                             <ElementLink>
@@ -85,6 +94,44 @@
                         </li>
                     </ul>
                 </nav>
+                <div class="header-section__burger-button"
+                @click="toggleMenu" 
+                v-if="currentlyMobile"
+                :data-active="burgerOpen">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="header-section__menu" v-if="burgerOpen && currentlyMobile">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">Derev’Ya</a>
+                        </li>
+                        <li>
+                            <a href="#">Домой</a>
+                        </li>
+                        <li>
+                            <a href="#">История</a>
+                        </li>
+                        <li>
+                            <a href="#">Видео</a>
+                        </li>
+                        <li>
+                            <a href="#">Статистика</a>
+                        </li>
+                        <li>
+                            <a href="#">Как это работает</a>
+                        </li>
+                        <li>
+                            <a href="#">Зарегистрируйтесь сейчас</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#" class="button">
+                    Присоединиться к мероприятию
+                </a>
             </div>
         </div>
     </header>
@@ -102,10 +149,14 @@
     }
 
     .header-section {
+        position: relative;
         &__container {
             padding: 1.25rem 4rem;
             background-color: #fff;
             @include df_jb_ac;
+            @include mobile {
+                padding: 0.4167rem 1.6667rem;
+            }
         }
         &__logo {
             @include df_ac;
@@ -114,6 +165,9 @@
                 max-height: 2.625rem;
                 aspect-ratio: 1 / 1;
                 height: 100%;
+                @include mobile {
+                    max-height: 2.33rem;
+                }
                 svg {
                     @include wh-100;
                 }
@@ -123,12 +177,71 @@
                 line-height: 110%;
                 font-weight: 400;
                 color: #2A521E;
+                font-size: 1rem;
             }
         }
         &__nav-block {
             ul {
                 @include df_ac;
                 gap: 3.75rem;
+            }
+        }
+        &__burger-button {
+            @include df_fdc;
+            gap: .33rem;
+            div {
+                height: .25rem;
+                width: 2rem;
+                background-color: #525252;
+                @include transition(transform);
+            }
+            &[data-active="true"] {
+                div:nth-child(1) {
+                    transform: translateY(0.5rem) rotate(45deg);
+                }
+                
+                div:nth-child(2) {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+                
+                div:nth-child(3) {
+                    transform: translateY(-0.625rem) rotate(-45deg);
+                }
+            }
+        }
+        &__menu {
+            position: fixed;
+            top: 3rem;
+            left: 0;
+            width: 100%;
+            padding: 0.8333rem;
+            background-color: #fff;
+            @include df_fdc;
+            gap: 2.33rem;
+            nav {
+                ul {
+                    @include df_fdc;
+                    gap: 2.5rem;
+                    li {
+                        a {
+                            font-size: 1rem;
+                            font-weight: 400;
+                            line-height: 110%;
+                            color: #525252;
+                        }
+                    }
+                }
+            }
+            .button {
+                padding: 1rem;
+                background-color: #5EA500;
+                border-radius: 5px;
+                width: 100%;
+                color: #fff;
+                font-size: 0.9167rem;
+                font-weight: 400;
+                line-height: 110%;
             }
         }
     }

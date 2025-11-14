@@ -87,17 +87,24 @@
         }
         &__title-block {
             @include df_fdc;
-            padding: 2.5rem 2.5rem 2.5rem 3.875rem;
+            padding: 2.5rem 3.875rem 2.5rem 2.5rem;
             background-color: #fff;
             font-size: 1.5rem;
             line-height: 110%;
             font-weight: 400;
             color: #27272A;
+            @include mobile {
+                font-size: 0.83rem;
+                padding: 1.1667rem 3.33rem 1.1667rem 1.1667rem;
+            }
             span {
                 font-size: 1.5rem;
                 line-height: 110%;
                 font-weight: 500;
                 color: #000;
+                @include mobile {
+                    font-size: 0.83rem;
+                }
             }
         }
     }
