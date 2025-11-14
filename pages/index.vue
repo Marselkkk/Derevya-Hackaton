@@ -47,12 +47,27 @@
         }
     };
 
+    const historyData = ref<any[]>([]);
+    const reviewsData = ref<any[]>([]);
+
+    onMounted(async () => {
+        const historyRes = await $fetch<any>('/history/', {
+            baseURL: 'https://tspk-practice.altorus.ru/api',
+        });
+        historyData.value = historyRes.results ?? [];
+
+        const reviewsRes = await $fetch<any>('/reviews/', {
+            baseURL: 'https://tspk-practice.altorus.ru/api',
+        });
+        reviewsData.value = reviewsRes.results ?? [];
+    })
+
 </script>
 
 <template>
     <Header></Header>
 
-    <section>
+    <section id="hero">
         <div class="hero-section">
             <div class="hero-section__container container">
                 <div class="hero-section__info-block">
@@ -65,12 +80,12 @@
                     </span>
                 </div>
                 <div class="hero-section__button-block">
-                    <div class="button blur">
+                    <a href="#about" class="button blur">
                         Узнать больше
-                    </div>
-                    <div class="button green">
+                    </a>
+                    <a href="#feedback" class="button green">
                         Присоединиться к мероприятию
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -203,7 +218,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="history">
         <div class="history-section">
             <div class="history-section__container container">
                 <div class="history-section__title-block">
@@ -211,13 +226,21 @@
                     С 2021 года «Derev’Ya» успешно организует мероприятия по посадке леса по всей России, объединяя тысячи волонтеров для восстановления и защиты наших драгоценных лесов.
                 </div>
                 <div class="history-section__info-block">
-                    <HistoryCard />
+                    <HistoryCard v-for="history in historyData"
+                    :key="history?.id"
+                    :name="history?.name"
+                    :description="history?.description"
+                    :period="history?.period"
+                    :city="history?.city"
+                    :members="history?.members"
+                    :trees="history?.trees"
+                    :photo="history?.photo.photo" />
                 </div>
             </div>
         </div>
     </section>
 
-    <section>
+    <section id="video">
         <div class="video-section">
             <div class="video-section__container container">
                 <div class="video-section__selection">
@@ -241,15 +264,18 @@
                 <div class="video-section__title" v-if="!currentlyMobile">
                     смотрите видеозаписи наших посадок с помощью беспилотника и телевизионные репортажи о наших экологических инициативах
                 </div>
-                <div class="video-section__video-block">
+                <div class="video-section__video-block" v-if="pickedVideo === 'drone'">
                     <VideoCard />
+                    <VideoCard />
+                </div>
+                <div class="video-section__video-block" v-if="pickedVideo === 'reportage'">
                     <VideoCard />
                 </div>
             </div>
         </div>
     </section>
 
-    <section>
+    <section id="forest">
         <div class="forest-section">
             <div class="forest-section__container container">
                 <div class="forest-section__title-block">
@@ -344,7 +370,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="about">
         <div class="about-section">
             <div class="about-section__container container">
                 <div class="about-section__title-block">
@@ -392,6 +418,7 @@
                                 <path d="M56.1481 25C57.7656 25 59.2688 25.8897 60.125 27.3537L63.2939 32.7721H68.2292C71.9686 32.7721 75 36.006 75 39.9953V67.7768C75 71.7661 71.9686 75 68.2292 75H31.7708C28.0314 75 25 71.7661 25 67.7768V39.9953C25 36.006 28.0314 32.7721 31.7708 32.7721H37.1219L40.0023 27.4871C40.8415 25.9474 42.385 25 44.0546 25H56.1481ZM56.1481 28.3338H44.0546C43.5776 28.3338 43.1314 28.5658 42.8375 28.9553L42.7038 29.1628L39.3716 35.2768C39.0919 35.7901 38.5774 36.1058 38.0208 36.1058H31.7708C29.7573 36.1058 28.125 37.8472 28.125 39.9953V67.7768C28.125 69.9249 29.7573 71.6662 31.7708 71.6662H68.2292C70.2427 71.6662 71.875 69.9249 71.875 67.7768V39.9953C71.875 37.8472 70.2427 36.1058 68.2292 36.1058H62.4271C61.8879 36.1058 61.3868 35.8093 61.1014 35.3213L57.4737 29.1183C57.1883 28.6303 56.6873 28.3338 56.1481 28.3338ZM50 40.5531C56.3283 40.5531 61.4583 46.0259 61.4583 52.777C61.4583 59.528 56.3283 65.0008 50 65.0008C43.6717 65.0008 38.5417 59.528 38.5417 52.777C38.5417 46.0259 43.6717 40.5531 50 40.5531ZM50 43.8869C45.3976 43.8869 41.6667 47.8671 41.6667 52.777C41.6667 57.6868 45.3976 61.6671 50 61.6671C54.6024 61.6671 58.3333 57.6868 58.3333 52.777C58.3333 47.8671 54.6024 43.8869 50 43.8869Z" fill="#C6005C"/>
                             </svg>
                         </div>
+                        <div class="about-section__info-block__steps__line pink" v-if="currentlyMobile"></div>
                     </div>
                     <div class="about-section__info-block__cards">
                         <div class="about-card">
@@ -420,7 +447,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="feedback">
         <div class="feedback-section">
             <div class="feedback-section__container container">
                 <div class="feedback-section__title-block">
@@ -555,7 +582,12 @@
                     Что говорят люди
                 </div>
                 <div class="reviews-section__info-block">
-                    <ReviewCard />
+                    <ReviewCard v-for="(review, index) in reviewsData"
+                    :key="index"
+                    :rating="review?.rating"
+                    :author="review?.author"
+                    :author_position="review?.author_position"
+                    :description="review?.description" />
                 </div>
             </div>
         </div>
@@ -570,21 +602,31 @@
         background-image: url('/images/hero-image.png');
         @include bg_s;
         background-size: cover;
+        @include mobile {
+            height: 50dvh;
+            padding-top: 3.33rem;
+        }
         &__container {
             @include df_ac_jcc;
             flex-direction: column;
             gap: 6.25rem;
             height: 100%;
+            @include mobile {
+                gap: 1.33rem;
+            }
         }
         &__info-block {
             @include df_fdc;
-            gap: 1.25rem;
+            gap: 1.5rem;
             span {
                 color: #fff;
-                font-size: 1.25rem;
+                font-size: 1.5rem;
                 line-height: 110%;
                 font-weight: 400;
                 text-align: center;
+                @include mobile {
+                    font-size: 1rem;
+                }
             }
             &__title-block {
                 font-size: 4rem;
@@ -593,12 +635,19 @@
                 text-align: center;
                 @include df_fdc;
                 gap: .25rem;
+                @include mobile {
+                    font-size: 1.33rem;
+                    font-weight: 200;
+                }
                 span {
                     color: #fff;
                     font-size: 6rem;
                     line-height: 110%;
                     font-weight: 400;
                     text-align: center;
+                    @include mobile {
+                        font-size: 2.67rem;
+                    }
                 }
             }
         }
@@ -607,6 +656,11 @@
             gap: 2rem;
             padding: 0 6.25rem;
             width: 100%;
+            @include mobile {
+                padding: 0 5rem;
+                gap: 1rem;
+                flex-direction: column-reverse;
+            }
             .button {
                 padding: 1.5rem;
                 border-radius: 2.5rem;
@@ -615,8 +669,16 @@
                 line-height: 110%;
                 font-weight: 400;
                 flex: 1;
+                @include mobile {
+                    width: 100%;
+                    border-radius: 0.42rem;
+                    font-size: 1rem;
+                }
                 &.green {
                     background-color: #61A94B;
+                    @include mobile {
+                        background-color: #5EA500;
+                    }
                     &:hover {
                         background-color: #74c95b;
                     }
@@ -882,6 +944,10 @@
             padding: 6.25rem 0;
             @include df_fdc;
             gap: 3.375rem;
+            @include mobile {
+                padding: 0 0 3.33rem;
+                gap: 1.33rem;
+            }
         }
         &__title-block {
             @include df_fdc;
@@ -891,25 +957,44 @@
             font-weight: 400;
             line-height: 110%;
             color: #35530E;
+            @include mobile {
+                font-size: 1.33rem;
+            }
             span {
                 font-size: 2rem;
                 font-weight: 500;
                 line-height: 110%;
                 color: #35530E;
+                @include mobile {
+                    font-size: 2.67rem;
+                    font-weight: 400;
+                }
             }
         }
         &__info-block {
             @include grid(3, 1.5rem);
+            @include mobile {
+                @include df_fdc;
+                gap: .67rem;
+            }
             .forest-card {
                 @include df_fdc;
                 gap: 4.5rem;
                 padding: 2.5rem 2.5rem 6.25rem;
                 border-radius: 1.25rem;
+                @include mobile {
+                    gap: 0.83rem;
+                    padding: 1.17rem 1.17rem 1.5rem;
+                }
                 &__icon-block {
                     @include df_jb_ac;
                     &__icon-big {
                         height: 3rem;
                         width: 2.75rem;
+                        @include mobile {
+                            height: 2rem;
+                            width: 2rem;
+                        }
                         svg {
                             @include wh-100;
                         }
@@ -918,6 +1003,10 @@
                         height: 1.5rem;
                         width: 1.5rem;
                         aspect-ratio: 1 / 1;
+                        @include mobile {
+                            height: 1.67rem;
+                            width: 1.67rem;
+                        }
                         svg {
                             @include wh-100;
                         }
@@ -926,20 +1015,33 @@
                 &__title-block {
                     @include df_fdc;
                     gap: 1.75rem;
+                    @include mobile {
+                        gap: .67rem;
+                    }
                     &__title {
                         font-size: 4rem;
                         font-weight: 400;
                         line-height: 110%;
+                        @include mobile {
+                            font-size: 1.33rem;
+                        }
                     }
                     &__desc {
                         font-size: 2rem;
                         font-weight: 300;
                         line-height: 110%;
+                        @include mobile {
+                            font-size: 1rem;
+                        }
                     }
-                    &__title {
-                        font-size: 2rem;
+                    &__mini {
+                        font-size: 1.5rem;
                         font-weight: 300;
                         line-height: 110%;
+                        @include mobile {
+                            padding-top: .67rem;
+                            font-size: 0.83rem;
+                        }
                     }
                 }
                 &.red {
@@ -964,7 +1066,7 @@
                         &__desc {
                             color: #82181A;
                         }
-                        &__title {
+                        &__mini {
                             color: #C10007;
                         }
                     }
@@ -991,7 +1093,7 @@
                         &__desc {
                             color: #7E2A0C;
                         }
-                        &__title {
+                        &__mini {
                             color: #9F2D00;
                         }
                     }
@@ -1018,7 +1120,7 @@
                         &__desc {
                             color: #2A521E;
                         }
-                        &__title {
+                        &__mini {
                             color: #2A521E;
                         }
                     }
@@ -1032,6 +1134,10 @@
             padding: 4rem 0;
             @include df_fdc;
             gap: 2rem;
+            @include mobile {
+                padding: 0 0 3.33rem;
+                gap: 1.33rem;
+            }
         }
         &__title-block {
             @include df_fdc;
@@ -1041,22 +1147,40 @@
             font-weight: 400;
             line-height: 110%;
             color: #35530E;
+            @include mobile {
+                font-size: 1.33rem;
+            }
             span {
                 font-size: 2rem;
                 font-weight: 500;
                 line-height: 110%;
                 color: #35530E;
+                @include mobile {
+                    font-size: 2.67rem;
+                    font-weight: 400;
+                }
             }
         }
         &__info-block {
             @include df_fdc;
             gap: 3.25rem;
+            @include mobile {
+                flex-direction: row;
+                gap: 5.83rem;
+            }
             &__steps {
                 padding: 0 6.2rem;
                 @include df_ac;
+                @include mobile {
+                    flex-direction: column;
+                    padding: 0;
+                }
                 &__icon {
                     height: 6.25rem;
                     aspect-ratio: 1 / 1;
+                    @include mobile {
+                        height: 4rem;
+                    }
                     svg {
                         @include wh-100;
                     }
@@ -1064,6 +1188,10 @@
                 &__line {
                     height: .25rem;
                     width: 100%;
+                    @include mobile {
+                        width: 0.33rem;
+                        height: 100%;
+                    }
                     &.blue {
                         background-color: #CEFAFE;
                     }
@@ -1076,10 +1204,17 @@
                     &.purple {
                         background-color: #EDE9FE;
                     }
+                    &.pink {
+                        background-color: #F6CFFF;
+                    }
                 }
             }
             &__cards {
                 @include grid(5, 3rem);
+                @include mobile {
+                    @include df_fdc;
+                    gap: 2.67rem;
+                }
                 .about-card {
                     padding: 2rem 1.5rem;
                     border: 1px solid #0A0A0A;
@@ -1090,6 +1225,15 @@
                     font-size: 1.5rem;
                     font-weight: 400;
                     line-height: 90%;
+                    @include mobile {
+                        gap: 0.83rem;
+                        font-size: 0.83rem;
+                        line-height: 200%;
+                        text-align: start;
+                        span {
+                            font-size: 1rem;
+                        }
+                    }
                 }
             }
         }
@@ -1100,6 +1244,10 @@
             padding: 4rem 0;
             @include df_fdc;
             gap: 3.25rem;
+            @include mobile {
+                padding: 0 0 3.33rem;
+                gap: 1.33rem;
+            }
         }
         &__title-block {
             @include df_fdc;
@@ -1109,16 +1257,27 @@
             font-weight: 400;
             line-height: 110%;
             color: #35530E;
+            @include mobile {
+                font-size: 1.33rem;
+            }
             span {
                 font-size: 2rem;
                 font-weight: 500;
                 line-height: 110%;
                 color: #35530E;
+                @include mobile {
+                    font-size: 2.67rem;
+                    font-weight: 400;
+                }
             }
         }
         &__info-block {
             display: flex;
             gap: 1.5rem;
+            @include mobile {
+                flex-direction: column;
+                gap: 3.33rem;
+            }
             &__info {
                 flex: 1;
                 border-radius: 2.75rem;
@@ -1135,6 +1294,10 @@
                     justify-content: flex-end;
                     padding: 0;
                     padding-top: 27.5rem;
+                    @include mobile {
+                        padding-top: 9.58rem;
+                        gap: 0.83rem;
+                    }
                 }
                 &__title-block {
                     @include df_fdc;
@@ -1143,8 +1306,15 @@
                     font-size: 1.5rem;
                     line-height: 110%;
                     font-weight: 400;
+                    @include mobile {
+                        gap: 0.83rem;
+                        font-size: 0.83rem;
+                    }
                     span {
                         font-size: 2rem;
+                        @include mobile {
+                            font-size: 1.33rem;
+                        }
                     }
                 }
                 &__content {
@@ -1152,16 +1322,30 @@
                     gap: 3rem;
                     background-color: #fff;
                     padding: 2rem 2.5rem;
+                    @include mobile {
+                        gap: 0.83rem;
+                        padding: 0.83rem;
+                    }
                     &__characteristics {
                         @include df_fdc;
                         gap: 0.375rem;
+                        @include mobile {
+                            gap: 1.33rem;
+                        }
                         .characteristic-item {
                             display: flex;
                             padding-bottom: 2.5rem;
                             gap: 1rem;
+                            @include mobile {
+                                padding: 0;
+                                gap: .33rem;
+                            }
                             &__icon {
                                 height: 2.25rem;
                                 aspect-ratio: 1 / 1;
+                                @include mobile {
+                                    height: 2.67rem;
+                                }
                                 svg {
                                     @include wh-100;
                                 }
@@ -1174,12 +1358,18 @@
                                     font-weight: 400;
                                     line-height: 110%;
                                     color: #525252;
+                                    @include mobile {
+                                        font-size: 1rem;
+                                    }
                                 }
                                 &__value {
                                     font-size: 1.5rem;
                                     font-weight: 400;
                                     line-height: 110%;
                                     color: #000;
+                                    @include mobile {
+                                        font-size: 1rem;
+                                    }
                                 }
                             }
                         }
@@ -1189,24 +1379,37 @@
                         gap: 0.625rem;
                         padding: 1rem 1.25rem;
                         border-radius: 1.25rem;
+                        @include mobile {
+                            padding: 2rem 0.83rem 3.33rem 1.33rem;
+                            gap: 3.33rem;
+                        }
                         span {
                             font-size: 2rem;
                             line-height: 110%;
                             font-weight: 400;
+                            @include mobile {
+                                font-size: 1.33rem;
+                            }
                         }
                         ul {
                             li {
                                 list-style: disc;
-                                margin-left: 1rem;
+                                margin-left: 1.25rem;
                                 font-size: 1.5rem;
                                 line-height: 110%;
                                 font-weight: 400;
+                                @include mobile {
+                                    font-size: 1rem;
+                                }
                             }
                         }
                         p {
                             font-size: 1.5rem;
                             line-height: 110%;
                             font-weight: 400;
+                            @include mobile {
+                                font-size: 1rem;
+                            }
                         }
                         &.green {
                             background-color: #DCFCE7;
@@ -1278,6 +1481,10 @@
             padding: 6.25rem 0;
             @include df_fdc;
             gap: 7.1875rem;
+            @include mobile {
+                padding: 0 0 3.33rem;
+                gap: 1.33rem;
+            }
         }
         &__title {
             text-align: center;
@@ -1285,9 +1492,17 @@
             font-weight: 500;
             line-height: 110%;
             color: #35530E;
+            @include mobile {
+                text-align: start;
+                font-size: 2.67rem;
+            }
         }
         &__info-block {
             @include grid(3, 2.75rem);
+            @include mobile {
+                @include df_fdc;
+                gap: 1.33rem;
+            }
         }
     }
 </style>

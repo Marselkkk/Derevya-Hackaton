@@ -35,12 +35,24 @@
         padding: 5.5rem 2rem;
         border-radius: 1.25rem;
         border: 1px solid #525252;
+        @include mobile {
+            padding: 2rem 1.33rem;
+            gap: 2.67rem;
+        }
+        hr {
+            border: 0;
+            border-bottom: 1px solid #000;
+        }
         &__rating {
             @include df_ac;
             gap: 0.25rem;
             svg {
                 height: 2rem;
                 width: 2rem;
+                @include mobile {
+                    height: 2.67rem;
+                    width: 2.67rem;
+                }
             }
         }
         &__description {
@@ -48,6 +60,9 @@
             font-weight: 400;
             line-height: 110%;
             color: #525252;
+            @include mobile {
+                font-size: 1rem;
+            }
         }
         &__title-block {
             @include df_fdc;
@@ -56,9 +71,16 @@
             font-weight: 400;
             line-height: 110%;
             color: #525252;
+            @include mobile {
+                font-size: 0.83rem;
+            }
             span {
                 font-weight: 550;
                 color: #000;
+                @include mobile {
+                    font-size: 1.33rem;
+                    font-weight: 400;
+                }
             }
         }
     }

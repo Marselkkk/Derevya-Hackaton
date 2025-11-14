@@ -98,15 +98,28 @@
         &__container {
             padding: 6.25rem 0;
             @include grid(4, 1.5rem);
+            @include mobile {
+                @include df_fdc;
+                gap: 1.33rem;
+                padding: 3rem 0 1.33rem;
+            }
         }
         &__info {
             @include df_fdc;
             gap: 1.5rem;
+            &:first-of-type {
+                @include mobile {
+                    max-width: 50%;
+                }
+            }
             span {
                 font-size: 2rem;
                 font-weight: 600;
                 line-height: 110%;
                 color: #fff;
+                @include mobile {
+                    font-size: 1rem;
+                }
             }
             ul {
                 @include df_fdc;
@@ -130,6 +143,9 @@
                         font-size: 1.5rem;
                         font-weight: 400;
                         line-height: 110%;
+                        @include mobile {
+                            font-size: 1rem;
+                        }
                     }
                 }
             }
@@ -143,6 +159,10 @@
                 svg {
                     height: 2.625rem;
                     width: 2.625rem;
+                    @include mobile {
+                        height: 2rem;
+                        width: 2rem;
+                    }
                 }
             }
             &__social-desc {
@@ -150,20 +170,33 @@
                 font-size: 1.5rem;
                 font-weight: 500;
                 line-height: 110%;
+                @include mobile {
+                    font-size: 0.83rem;
+                }
             }
         }
         &__logo {
             @include df_ac;
             gap: .75rem;
+            @include mobile {
+                gap: .25rem;
+            }
             svg {
                 height: 2.625rem;
                 width: 2.625rem;
+                @include mobile {
+                    height: 2.33rem;
+                    width: 2.33rem;
+                }
             }
             span {
                 font-size: 2rem;
                 font-weight: 400;
                 line-height: 110%;
                 color: #fff;
+                @include mobile {
+                    font-size: 1rem;
+                }
             }
         }
         &__desc {
@@ -171,6 +204,9 @@
             font-weight: 400;
             line-height: 110%;
             color: #fff;
+            @include mobile {
+                font-size: 1rem;
+            }
         }
     }
 </style>

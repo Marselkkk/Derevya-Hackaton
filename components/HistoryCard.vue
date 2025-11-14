@@ -14,13 +14,14 @@
 </script>
 
 <template>
-    <div class="history-card">
+    <div class="history-card"
+    :style="`background-image: url('${!!photo ? photo : '/images/history-1.png'}');`">
         <div class="history-card__info-block">
             <div class="history-card__info-block__title">
-                Весенняя акция по лесовосстановлению
+                {{ name }}
             </div>
             <div class="history-card__info-block__description">
-                Особое внимание уделено районам, пострадавшим от лесных пожаров летом 2023 года, посадке засухоустойчивых саженцев сосны и березы.
+                {{ description }}
             </div>
             <div class="history-card__info-block__info">
                 <div class="history-item">
@@ -34,7 +35,7 @@
                             Дата
                         </div>
                         <div class="history-item__title-block__value">
-                            Апрель 15-16,2024
+                            {{ period }}
                         </div>
                     </div>
                 </div>
@@ -49,7 +50,7 @@
                             Локация
                         </div>
                         <div class="history-item__title-block__value">
-                            Москва
+                            {{ city }}
                         </div>
                     </div>
                 </div>
@@ -61,10 +62,10 @@
                     </div>
                     <div class="history-item__title-block">
                         <div class="history-item__title-block__key">
-                            Дата
+                            Участники
                         </div>
                         <div class="history-item__title-block__value">
-                            Апрель 15-16,2024
+                            {{ members }}
                         </div>
                     </div>
                 </div>
@@ -76,10 +77,10 @@
                     </div>
                     <div class="history-item__title-block">
                         <div class="history-item__title-block__key">
-                            Дата
+                            Посажено деревьев
                         </div>
                         <div class="history-item__title-block__value">
-                            Апрель 15-16,2024
+                            {{ trees }}
                         </div>
                     </div>
                 </div>
@@ -90,7 +91,6 @@
 
 <style lang="scss">
     .history-card {
-        background-image: url('/images/history-1.png');
         @include bg_s;
         border-radius: 1.875rem;
         border: 1px solid #525252;

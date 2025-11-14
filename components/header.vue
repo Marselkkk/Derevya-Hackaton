@@ -9,6 +9,14 @@
 
     const toggleMenu = () => {
         burgerOpen.value = !burgerOpen.value;
+
+        if (process.client) {
+            if (burgerOpen.value) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
     }
 
     const handleScroll = () => {
@@ -68,27 +76,27 @@
                 <nav class="header-section__nav-block" v-if="!currentlyMobile">
                     <ul>
                         <li>
-                            <ElementLink>
+                            <ElementLink link="#history">
                                 История
                             </ElementLink>
                         </li>
                         <li>
-                            <ElementLink>
+                            <ElementLink link="#video">
                                 Видео
                             </ElementLink>
                         </li>
                         <li>
-                            <ElementLink>
+                            <ElementLink link="#forest">
                                 Статистика
                             </ElementLink>
                         </li>
                         <li>
-                            <ElementLink>
+                            <ElementLink link="#about">
                                 Как это работает
                             </ElementLink>
                         </li>
                         <li>
-                            <ElementLink>
+                            <ElementLink link="#feedback">
                                 Зарегестрируйтесть сейчас
                             </ElementLink>
                         </li>
@@ -107,29 +115,33 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="#">Derev’Ya</a>
+                            <a href="#hero"
+                            @click="toggleMenu">Домой</a>
                         </li>
                         <li>
-                            <a href="#">Домой</a>
+                            <a href="#history"
+                            @click="toggleMenu">История</a>
                         </li>
                         <li>
-                            <a href="#">История</a>
+                            <a href="#video"
+                            @click="toggleMenu">Видео</a>
                         </li>
                         <li>
-                            <a href="#">Видео</a>
+                            <a href="#forest"
+                            @click="toggleMenu">Статистика</a>
                         </li>
                         <li>
-                            <a href="#">Статистика</a>
+                            <a href="#about"
+                            @click="toggleMenu">Как это работает</a>
                         </li>
                         <li>
-                            <a href="#">Как это работает</a>
-                        </li>
-                        <li>
-                            <a href="#">Зарегистрируйтесь сейчас</a>
+                            <a href="#feedback"
+                            @click="toggleMenu">Зарегистрируйтесь сейчас</a>
                         </li>
                     </ul>
                 </nav>
-                <a href="#" class="button">
+                <a href="#feedback" class="button"
+                @click="toggleMenu">
                     Присоединиться к мероприятию
                 </a>
             </div>

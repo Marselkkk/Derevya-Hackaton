@@ -36,6 +36,9 @@
         
         position: relative;
         text-decoration: none;
+        @include mobile {
+            font-size: 1rem;
+        }
         
         &::after {
             content: '';
